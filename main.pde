@@ -1,10 +1,8 @@
-
 // 네트워킹
 int port = 7750;
 String ip = "192.168.0.255";
 
 // cnt, 코인 가격
-
 int count;
 String[] parsedElements = {"0", "0", "0", "0", "0", "0", "0"};
 int[] coinPrices = {0, 0, 0, 0, 0};
