@@ -32,10 +32,4 @@ void draw() {
     text("Coin 3: " + coinPrices[2], width/2, height/2+150);
     text("Coin 4: " + coinPrices[3], width/2, height/2+200);
     text("Coin 5: " + coinPrices[4], width/2, height/2+250);
-
-    // println("Count: " + count);
-    // for(int i=0; i<5; i++) {
-    //     print("Coin " + i + ": " + coinPrice[i] + ", ");
-    // }
-    // println("");
 }
