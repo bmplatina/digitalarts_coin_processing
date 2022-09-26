@@ -1,6 +1,6 @@
 # FantaSIA DIGINO Cryptocurrency Exchange UI
 2022년도 서울예술대학교 축제 FantaSIA에서 디지털아트전공이 주관하는 부스에서 진행하는 가상화폐 현황 UI입니다.<br>
-Processing 4르 지원합니다
+Processing 4를 지원합니다
 
 # 설명
 <h1>(광고)DIA디딤돌 무료 가이드 염 대표입니다~</h1>
