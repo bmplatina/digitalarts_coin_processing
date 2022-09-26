@@ -9,6 +9,7 @@ int[] coinPrices = {0, 0, 0, 0, 0};
 int[] lastCoinPrices = {0, 0, 0, 0, 0};
 int[] coinPriceChanges = {0, 0, 0, 0, 0};
 int diaStockPrice = 0, lastDiaStockPrice = 0, diaStockPriceChanges = 0;
+String isIncreasing = "";
 
 // 이미지 애셋, 코인은 식품, 챗, 테크, 엔터, 건축 순서
 PImage background;
@@ -31,4 +32,16 @@ void textWithStroke(String text, int pixels, float x, float y, int textSize, col
     }
     fill(innerColor);
     text(text, x, y);
+}
+
+void checkIncreasing(int i) {
+    if(coinPriceChanges[i]>0) {
+        isIncreasing = "+";
+    }
+    else if(coinPriceChanges[i]==0) {
+        isIncreasing = "±";
+    }
+    else if(coinPriceChanges[i]<0){
+        isIncreasing = "-";
+    }
 }
