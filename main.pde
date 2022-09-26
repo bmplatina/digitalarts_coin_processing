@@ -34,13 +34,17 @@ void draw() {
     image(diaStock, 14.5, 738.5, 108.2, 108.2);
     
     textWithStroke("디아식품", 7, 192.5, 547.0, 36, #000000, #FFFFFF);
+    textWithStroke(Integer.toString(coinPriceChanges[0]), 7, 192.5, height/2+150, 36, #FFFFFF, #FF0000);
     textWithStroke("디아챗", 7, 494.5, 547.0, 36, #000000, #FFFFFF);
+    textWithStroke(Integer.toString(coinPriceChanges[1]), 7, 494.5, height/2+150, 36, #FFFFFF, #FF0000);
     textWithStroke("디아테크", 7, width/2, 547.0, 36, #000000, #FFFFFF);
+    textWithStroke(Integer.toString(coinPriceChanges[2]), 7, width/2, height/2+150, 36, #FFFFFF, #FF0000);
     textWithStroke("디아엔터", 7, 1098.5, 547.0, 36, #000000, #FFFFFF);
+    textWithStroke(Integer.toString(coinPriceChanges[3]), 7, 1098.5, height/2+150, 36, #FFFFFF, #FF0000);
     textWithStroke("디아건축", 7, 1398.5, 547.0, 36, #000000, #FFFFFF);
+    textWithStroke(Integer.toString(coinPriceChanges[4]), 7, 1398.5, height/2+150, 36, #FFFFFF, #FF0000);
     textWithStroke("디아증권", 7, 228.0, 768.0, 40, #000000, #FFFFFF);
 
-    textWithStroke(Integer.toString(coinPriceChanges[0]), 7, width/2, height/2, 36, #FFFFFF, #FF0000);
     for(int i=0; i<5; i++) {
         coinPriceChanges[i] = coinPrices[i] - lastCoinPrices[i];
     }
