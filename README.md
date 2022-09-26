@@ -1,5 +1,6 @@
 # FantaSIA DIGINO Cryptocurrency Exchange UI
-2022년도 서울예술대학교 축제 FantaSIA에서 디지털아트전공이 주관하는 부스에서 진행하는 가상화폐 현황 UI입니다.
+2022년도 서울예술대학교 축제 FantaSIA에서 디지털아트전공이 주관하는 부스에서 진행하는 가상화폐 현황 UI입니다.<br>
+Processing 4를 지원합니다
 
 # 설명
 <h1>(광고)DIA디딤돌 무료 가이드 염 대표입니다~</h1>
@@ -19,5 +20,9 @@
 ## Credit
 - 박채훈: 총괄 기획
 - 김태균, 오세민: 프로세싱 UDP 서버 제작
-- 이희훈, 권도익: UI 디자인
-- 이재혁: UI 인터랙션 개발
+- 이희훈, 권도익: 인터페이스 디자인
+- 이재혁: 클라이언트 및 인터페이스 개발
+
+## Dependencies
+- DOSMyungjo 도스명조 폰트 (제작자: leedheo)
+- UDP: Processing Library
