@@ -1,6 +1,6 @@
 // 네트워킹
 int port = 7750;
-String ip = "192.168.0.255";
+String ip = "172.16.204.113";
 
 // cnt, 코인 가격
 int count=0;
@@ -10,7 +10,6 @@ int[] coinPrices = {0, 0, 0, 0, 0};
 int[] lastCoinPrices = {0, 0, 0, 0, 0};
 int[] coinPriceChanges = {0, 0, 0, 0, 0};
 int diaStockPrice = 0, lastDiaStockPrice = 0, diaStockPriceChanges = 0;
-String isIncreasing = "";
 
 // 이미지 애셋, 코인은 식품, 챗, 테크, 엔터, 건축 순서
 PImage background;
@@ -35,7 +34,8 @@ void textWithStroke(String text, int pixels, float x, float y, int textSize, col
     text(text, x, y);
 }
 
-void checkIncreasing(int i) {
+String checkIncreasing(int i) {
+    String isIncreasing = "";
     if(coinPriceChanges[i]>0) {
         isIncreasing = "+";
     }
@@ -43,6 +43,7 @@ void checkIncreasing(int i) {
         isIncreasing = "±";
     }
     else if(coinPriceChanges[i]<0){
-        isIncreasing = "-";
+        isIncreasing = "";
     }
+    return isIncreasing;
 }

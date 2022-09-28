@@ -25,13 +25,32 @@ public class udp_server extends Thread {
   }
 
   void receive(byte[] data, String receive_ip, int receive_port) {
-    
+    print("Last Coin Price: ");
+    for(int i=0; i<5; i++) {
+        lastCoinPrices[i] = coinPrices[i];
+        print(lastCoinPrices[i]);
+    }
+    println("");
+    diaStockPriceChanges = diaStockPrice - lastDiaStockPrice;
+    lastDiaStockPrice = diaStockPrice;
     String msg = new String(data);
-    println(msg);
+    // println(msg);
     String readMsg[] = msg.split(",");
     for(int i=0; i<7; i++) {
-      print(readMsg[i]);
+      // print(readMsg[i]);
       parsedElements[i] =  readMsg[i];
+    }
+    if(parsedElements[0].contains("##UI")) {
+      print("Current Coin Price: ");
+      count = Integer.parseInt(parsedElements[1]);
+      for(int i=0; i<5; i++) {
+          coinPrices[i] = Integer.parseInt(parsedElements[i+2]);
+          print(coinPrices[i]);
+      }
+      println("");
+    }
+    for(int i=0; i<5; i++) {
+        coinPriceChanges[i] = coinPrices[i] - lastCoinPrices[i];
     }
   }
 }
