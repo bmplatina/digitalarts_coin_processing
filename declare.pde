@@ -4,12 +4,14 @@ String ip = "172.16.204.113";
 
 // cnt, 코인 가격
 int count=0;
+String kospi = "0";
 String[] parsedElements = {"0", "0", "0", "0", "0", "0", "0"};
 String[] articles;
 int[] coinPrices = {0, 0, 0, 0, 0};
 int[] lastCoinPrices = {0, 0, 0, 0, 0};
 int[] coinPriceChanges = {0, 0, 0, 0, 0};
 int diaStockPrice = 0, lastDiaStockPrice = 0, diaStockPriceChanges = 0;
+color changeColor = #FF0000;
 
 // 이미지 애셋, 코인은 식품, 챗, 테크, 엔터, 건축 순서
 PImage background;
@@ -38,12 +40,15 @@ String checkIncreasing(int i) {
     String isIncreasing = "";
     if(coinPriceChanges[i]>0) {
         isIncreasing = "+";
+        changeColor = #FF0000;
     }
     else if(coinPriceChanges[i]==0) {
         isIncreasing = "±";
+        changeColor = #000000;
     }
     else if(coinPriceChanges[i]<0){
         isIncreasing = "";
+        changeColor = #0000FF;
     }
     return isIncreasing;
 }

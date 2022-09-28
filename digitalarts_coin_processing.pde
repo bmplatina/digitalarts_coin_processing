@@ -49,8 +49,12 @@ public class udp_server extends Thread {
       }
       println("");
     }
+    print("Changelog of Coin Price: ");
     for(int i=0; i<5; i++) {
         coinPriceChanges[i] = coinPrices[i] - lastCoinPrices[i];
+        print(coinPriceChanges[i] + ",");
     }
+    println("");
+    kospi = Integer.toString(int(random(1, 10)));
   }
 }
