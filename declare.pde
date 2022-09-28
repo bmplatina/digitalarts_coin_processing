@@ -3,8 +3,9 @@ int port = 7750;
 String ip = "192.168.0.255";
 
 // cnt, 코인 가격
-int count;
+int count=0;
 String[] parsedElements = {"0", "0", "0", "0", "0", "0", "0"};
+String[] articles;
 int[] coinPrices = {0, 0, 0, 0, 0};
 int[] lastCoinPrices = {0, 0, 0, 0, 0};
 int[] coinPriceChanges = {0, 0, 0, 0, 0};

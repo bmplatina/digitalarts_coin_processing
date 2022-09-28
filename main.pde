@@ -7,6 +7,7 @@ void setup() {
     dosMyungjo = createFont("DOSMyungjo.ttf", 24);
     textAlign(CENTER);
     background = loadImage("bg.jpg");
+    articles = loadStrings("articles.txt");
 
     // 식품, 챗, 테크, 엔터, 건축 순서
     diaFood = loadImage("diaFood.png");
@@ -33,6 +34,7 @@ void draw() {
     image(diaConst, 1300, 292, 197, 197);
     image(diaStock, 14.5, 738.5, 108.2, 108.2);
     
+    textAlign(CENTER);
     textWithStroke("디아식품", 7, 192.5, 547.0, 36, #000000, #FFFFFF);
     checkIncreasing(0);
     textWithStroke(isIncreasing + Integer.toString(coinPriceChanges[0]), 7, 192.5, height/2+150, 36, #FFFFFF, #FF0000);
@@ -49,6 +51,10 @@ void draw() {
     checkIncreasing(4);
     textWithStroke(isIncreasing + Integer.toString(coinPriceChanges[4]), 7, 1398.5, height/2+150, 36, #FFFFFF, #FF0000);
     textWithStroke("디아증권", 7, 228.0, 768.0, 40, #000000, #FFFFFF);
+    
+    textAlign(LEFT);
+    textWithStroke(articles[count], 7, 594, 1186, 36, #000000, #FFFFFF);
+    textWithStroke(articles[count+1], 7, 594, 1186, 36, #000000, #FFFFFF);
 
     for(int i=0; i<5; i++) {
         coinPriceChanges[i] = coinPrices[i] - lastCoinPrices[i];
