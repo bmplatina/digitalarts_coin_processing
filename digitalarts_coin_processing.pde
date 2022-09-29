@@ -2,7 +2,8 @@ import hypermedia.net.*;
 
 public class udp_server extends Thread {
   UDP udp;
-  
+  int before_cnt = 0;
+  int cnt_now = 0;
   udp_server(int _port) {
       port = _port;
       udp = new UDP(this, port);
@@ -11,6 +12,18 @@ public class udp_server extends Thread {
   
   void send(String _data) {
       udp.send(_data, ip, port);
+  }
+
+  int get_cnt_now(){
+    return cnt_now;
+  }
+
+  boolean cnt_Ischange(){
+    if(before_cnt != cnt_now){
+        before_cnt = cnt_now;
+        return true;
+    }
+    return false;
   }
   
   public void run() {
@@ -42,7 +55,7 @@ public class udp_server extends Thread {
     }
     if(parsedElements[0].contains("##UI")) {
       print("Current Coin Price: ");
-      count = Integer.parseInt(parsedElements[1]);
+      cnt_now = Integer.parseInt(parsedElements[1]);
       for(int i=0; i<5; i++) {
           coinPrices[i] = Integer.parseInt(parsedElements[i+2]);
           print(coinPrices[i]);
@@ -56,5 +69,17 @@ public class udp_server extends Thread {
     }
     println("");
     kospi = Integer.toString(int(random(1, 10)));
+
+    //println("articles.length: " + articles.length);
+    // for(int i=0; i < articles.length; i++) {
+    //   splittedArticle = articles[i].split("/");
+      // println(splittedArticle[1]);
+      // if(Integer.parseInt(splittedArticle[0]) == count) {
+      //   showArticle = splittedArticle[1];
+      // }
+      // else {
+      //   showArticle = "";
+      // }
+    // }
   }
 }

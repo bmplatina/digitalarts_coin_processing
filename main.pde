@@ -1,13 +1,28 @@
 udp_server udpServer = new udp_server(port);
 
 void setup() {
-    size(1600, 900);
+     size(1600, 900);
+    //fullScreen();
     udpServer.start();
 
     dosMyungjo = createFont("DOSMyungjo.ttf", 24);
     textAlign(CENTER);
     background = loadImage("bg.jpg");
-    articles = loadStrings("articles.txt");
+    articles = loadStrings("articles_day1.txt");
+    //---------------------------------------------
+    for(int i=0; i<articles.length; i++){
+        println("i=" + str(i) + " -> " + articles[i]);
+        String[] result = articles[i].split("/");
+        println("a1:" + result[0] + " a2:" + result[1]);
+        
+        array_articles_cnt.add( Integer.parseInt(result[0]) );
+        array_articles_String.add(result[1]);
+
+    }
+    
+    print(articles.length );
+
+
 
     // 식품, 챗, 테크, 엔터, 건축 순서
     diaFood = loadImage("diaFood.png");
@@ -42,7 +57,20 @@ void draw() {
     
     textAlign(LEFT);
     textWithStroke(kospi, 7, 153, 820, 42, #000000, #FFFFFF);
-    textWithStroke(articles[count], 7, 378, 770, 36, #000000, #FFFFFF);
-    // textWithStroke(articles[count+1], 7, 378, 810, 36, #000000, #FFFFFF);
-    // textWithStroke(articles[count+2], 7, 378, 810, 36, #000000, #FFFFFF);
+    textWithStroke(display_text, 7, 378, 770, 36, #000000, #FFFFFF);
+                
+    //-------
+    
+    if( udpServer.cnt_Ischange() == true ){
+        int cnt = udpServer.get_cnt_now();
+        for(int i=0; i<array_articles_cnt.size(); i++ ){   
+            if( array_articles_cnt.get(i) ==  cnt ){
+                display_text = array_articles_String.get(i);
+            }
+        }
+    }
+    
+
+
+    // textWithStroke(showArticle, 7, 378, 770, 36, #000000, #FFFFFF);
 }
