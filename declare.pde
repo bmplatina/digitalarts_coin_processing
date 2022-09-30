@@ -15,7 +15,9 @@ int[] coinPriceChanges = {0, 0, 0, 0, 0};
 int diaStockPrice = 0, lastDiaStockPrice = 0, diaStockPriceChanges = 0;
 color changeColor = #FF0000;
 
-String display_text = "";
+String display_text1 = "";
+String display_text2 = "";
+String log = "";
 
 ArrayList<Integer> array_articles_cnt = new ArrayList<Integer>();//타입설정 int타입만 사용가능
 ArrayList<String> array_articles_String = new ArrayList<String>();//타입설정 int타입만 사용가능

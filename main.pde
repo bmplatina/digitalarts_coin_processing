@@ -1,8 +1,8 @@
 udp_server udpServer = new udp_server(port);
 
 void setup() {
-     size(1600, 900);
-    //fullScreen();
+    //  size(1600, 900);
+    fullScreen();
     udpServer.start();
 
     dosMyungjo = createFont("DOSMyungjo.ttf", 24);
@@ -57,7 +57,8 @@ void draw() {
     
     textAlign(LEFT);
     textWithStroke(kospi, 7, 153, 820, 42, #000000, #FFFFFF);
-    textWithStroke(display_text, 7, 378, 770, 36, #000000, #FFFFFF);
+    textWithStroke(display_text1, 7, 378, 770, 36, #000000, #FFFFFF);
+    textWithStroke(display_text2, 7, 378, 810, 36, #000000, #FFFFFF);
                 
     //-------
     
@@ -65,7 +66,16 @@ void draw() {
         int cnt = udpServer.get_cnt_now();
         for(int i=0; i<array_articles_cnt.size(); i++ ){   
             if( array_articles_cnt.get(i) ==  cnt ){
-                display_text = array_articles_String.get(i);
+                log = array_articles_String.get(i );
+                display_text1 = "";
+                display_text2 = "";
+                for(int a=0; a< log.length(); a++  ){
+                    if( a < 36){
+                        display_text1 = display_text1 + log.charAt(a);
+                    }else{
+                        display_text2 = display_text2 + log.charAt(a);
+                    }
+                }
             }
         }
     }

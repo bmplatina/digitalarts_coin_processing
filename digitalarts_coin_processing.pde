@@ -51,7 +51,7 @@ public class udp_server extends Thread {
     String readMsg[] = msg.split(",");
     for(int i=0; i<7; i++) {
       // print(readMsg[i]);
-      parsedElements[i] =  readMsg[i];
+      parsedElements[i] = readMsg[i];
     }
     if(parsedElements[0].contains("##UI")) {
       print("Current Coin Price: ");
