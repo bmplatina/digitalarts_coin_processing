@@ -62,8 +62,8 @@ void draw() {
                 
     //-------
     
-    if( udpServer.cnt_Ischange() == true ){
-        int cnt = udpServer.get_cnt_now();
+    if(udpServer.isCountChanged()){
+        int cnt = udpServer.getCurrentCount();
         for(int i=0; i<array_articles_cnt.size(); i++ ){   
             if( array_articles_cnt.get(i) ==  cnt ){
                 log = array_articles_String.get(i );

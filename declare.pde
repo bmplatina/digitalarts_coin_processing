@@ -5,13 +5,13 @@ String ip = "192.168.0.17";
 // cnt, 코인 가격
 int count=0;
 String kospi = "0";
-String[] parsedElements = {"0", "0", "0", "0", "0", "0", "0"};
+String[] parsedElements = new String[7];
 String[] articles;
 String[] splittedArticle;
 String showArticle;
-int[] coinPrices = {0, 0, 0, 0, 0};
-int[] lastCoinPrices = {0, 0, 0, 0, 0};
-int[] coinPriceChanges = {0, 0, 0, 0, 0};
+int[] coinPrices = new int[5];
+int[] lastCoinPrices = new int[5];
+int[] coinPriceChanges = new int[5];
 int diaStockPrice = 0, lastDiaStockPrice = 0, diaStockPriceChanges = 0;
 color changeColor = #FF0000;
 

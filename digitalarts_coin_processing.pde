@@ -2,8 +2,8 @@ import hypermedia.net.*;
 
 public class udp_server extends Thread {
   UDP udp;
-  int before_cnt = 0;
-  int cnt_now = 0;
+  int beforeCount = 0;
+  int currentCount = 0;
   udp_server(int _port) {
       port = _port;
       udp = new UDP(this, port);
@@ -14,13 +14,13 @@ public class udp_server extends Thread {
       udp.send(_data, ip, port);
   }
 
-  int get_cnt_now(){
-    return cnt_now;
+  int getCurrentCount(){
+    return currentCount;
   }
 
-  boolean cnt_Ischange(){
-    if(before_cnt != cnt_now){
-        before_cnt = cnt_now;
+  boolean isCountChanged(){
+    if(beforeCount != currentCount){
+        beforeCount = currentCount;
         return true;
     }
     return false;
@@ -55,7 +55,7 @@ public class udp_server extends Thread {
     }
     if(parsedElements[0].contains("##UI")) {
       print("Current Coin Price: ");
-      cnt_now = Integer.parseInt(parsedElements[1]);
+      currentCount = Integer.parseInt(parsedElements[1]);
       for(int i=0; i<5; i++) {
           coinPrices[i] = Integer.parseInt(parsedElements[i+2]);
           print(coinPrices[i]);
